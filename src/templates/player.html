@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ player.name }} - Steelers Hype</title>
+    <style>
+        body {
+            background-color: black;
+            color: rgb(251, 251, 10);
+            text-align: center;
+            font-family: Arial;
+        }
+        h1 {
+            margin-top: 40px;
+        }
+        .video-container {
+            margin-top: 40px;
+        }
+        iframe {
+            width: 70%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>{{ player.name }}</h1>
+
+    <div class="video-container">
+        <!-- Placeholder video -->
+        <iframe 
+            src="{{ player.video }}" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <a href="/">⬅ Back</a>
+
+</body>
+</html>
