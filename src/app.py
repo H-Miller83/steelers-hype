@@ -1,6 +1,10 @@
 from flask import Flask, jsonify, render_template
+import os
+import logging
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.INFO)
 
 players = [
     {
@@ -91,6 +95,7 @@ def player_page(player_id):
 
 @app.route("/health")
 def health():
+    logging.info("Health check requested")
     return {"status": "ok"}, 200
 
 @app.route("/players")
@@ -102,4 +107,5 @@ def works_cited():
     return render_template("works_cited.html")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
